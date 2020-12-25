@@ -28,6 +28,7 @@ deb [arch=amd64] http://ubuntu.openvidu.io/6.15.0 bionic kms6\n'\
 
 
 RUN apt-get update -y
+RUN apt-get install vim nano -y
 RUN apt-get install --no-install-recommends --yes kurento-media-server
 
 RUN service kurento-media-server start
@@ -35,10 +36,10 @@ RUN service kurento-media-server stop
 RUN apt install default-jre -y
 RUN apt install default-jdk -y
 RUN apt install maven -y
+RUN service kurento-media-server start
 RUN git clone https://github.com/firatturker/Kurento_demo.git
 RUN cd Kurento_demo/kurento-one2many-call &&  mvn clean install 
-RUN service kurento-media-server start
-WORKDIR /root/Kurento_demo/kurento-tutorial-java/kurento-one2many-call/target
+WORKDIR /root/kurento_test/Kurento_demo/kurento-one2many-call/target
 EXPOSE 8888
 ENTRYPOINT ["java", "-jar", "kurento-one2many-call-6.15.0-exec.jar"]
 
