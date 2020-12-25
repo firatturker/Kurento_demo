@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="expires" content="0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="img/kurento.png" type="image/png" />
+
+<link rel="stylesheet"
+	href="webjars/bootstrap/dist/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="webjars/ekko-lightbox/dist/ekko-lightbox.min.css">
+<link rel="stylesheet" href="webjars/demo-console/index.css">
+<link rel="stylesheet" href="css/kurento.css">
+
+<script src="webjars/jquery/dist/jquery.min.js"></script>
+<script src="webjars/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="webjars/ekko-lightbox/dist/ekko-lightbox.min.js"></script>
+<script src="/webjars/webrtc-adapter/release/adapter.js"></script>
+<script src="webjars/demo-console/index.js"></script>
+
+<script src="js/kurento-utils.js"></script>
+<script src="js/index.js"></script>
+</head>
+<body>
+
+	<div class="container">
+		<div class="page-header">
+			<div class="header">
+				<body style="background-color:#10255A">
+						<a href="http://www.liberta.com.tr"><img src="img/liberta.png"
+							alt="Liberta" height="50px" /></a>
+  				<h1 style='color:white;'>LIBERTA Video Presentation Application</h1>
+			</div>
+			<ol>
+				<li style='color:white;'><span style='color:white;'>Open this page with a browser compliant with WebRTC
+					(Chrome, Firefox).
+				</li>
+				<li style='color:white;'><span style='color:white;'>If you would like to be the <i>Presenter</i> of the
+					communication, click on <i>Presenter</i> button. There can only be
+					one of this kind of peer, and so, if the <i>Presenter</i> peer is
+					already present, the application returns an error (see the the
+					console).
+				</li>
+				<li style='color:white;'><span style='color:white;'>Grant the access to the camera and microphone. After the
+					SDP negotiation the communication should start.</li>
+				<li style='color:white;'><span style='color:white;'>In a different machine (or a different tab in the same
+					browser) click on <i>Viewer</i> button to see the <i>Presenter</i>
+					stream.
+				</li>
+				<li style='color:white;'><span style='color:white;'>Click on <i>Stop</i> to finish the communication. When <i>Presenter</i>
+					clicks on <i>Stop</i>, the rest of <i>Viewers</i> (if any) ends the
+					communication too.
+				</li>
+			</ol>
+		</div>
+		<div class="row">
+			<div class="col-md-5">
+				<div class="row">
+					<div class="col-md-12">
+						<a style='color:white;'id="presenter" href="#" class="btn btn-success"><span
+							class="glyphicon glyphicon-play"></span> Presenter </a> <a
+							style='color:white'id="viewer" href="#" class="btn btn-primary"><span
+							class="glyphicon glyphicon-user"></span> Viewer</a> <a id="stop"
+							href="#" class="btn btn-danger"><span
+							style='color:white'class="glyphicon glyphicon-stop"></span> Stop</a>
+					</div>
+				</div>
+				<br /> <label class="control-label" for="console"style="color:white;">Console</label><br>
+				<br>
+				<div style="background-color:#10255A" id="console" class="democonsole">
+					<ul></ul>
+				</div>
+			</div>
+			<div class="col-md-7">
+				<div id="videoBig">
+					<video id="video" autoplay width="640px" height="480px"
+						poster="img/webrtc.png"></video>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<footer>
+		<div class="foot-fixed-bottom">
+			<div class="container text-center">
+				<hr />
+				<div class="col-md-4">
+						<a href="https://www.kurento.org"><img src="img/kurento.png"
+							alt="Kurento" height="40px" /></a>
+				<div style='color:white;'class="row">&copy; 2014-2015 Kurento</div>
+				</div>
+					<div class="col-lg-4">
+						<a style='color:white;'href="http://www.liberta.com.tr"><img src="img/liberta.png"
+							alt="Liberta" height="20px" /></a>
+				<div style='color:white;'class="row">&copy; 2020-2020 Liberta</div>
+				</div>
+					<div class="col-auto">
+						<a style='color:white;'href="http://www.webrtc.org"><img src="img/WebRTC.png"
+							alt="WebRTC" height="40px" /></a>
+				<div style='color:white;'class="row">&copy; 2011-2020 WebRTC</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+</body>
+</html>
