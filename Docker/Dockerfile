@@ -35,14 +35,13 @@ RUN service kurento-media-server stop
 RUN apt install default-jre -y
 RUN apt install default-jdk -y
 RUN apt install maven -y
-RUN git clone https://github.com/Kurento/kurento-tutorial-java.git
-RUN cd kurento-tutorial-java/kurento-one2many-call && pwd
-RUN git checkout -b 6.2.1-SNAPSHOT
+RUN git clone https://github.com/firatturker/Kurento_demo.git
+RUN cd Kurento_demo/kurento-one2many-call &&  mvn clean install 
 RUN service kurento-media-server start
-RUN cd kurento-tutorial-java/kurento-one2many-call &&  mvn clean install 
-WORKDIR /root/kurento_test/kurento-tutorial-java/kurento-one2many-call/target
+WORKDIR /root/Kurento_demo/kurento-tutorial-java/kurento-one2many-call/target
 EXPOSE 8888
 ENTRYPOINT ["java", "-jar", "kurento-one2many-call-6.15.0-exec.jar"]
 
 #to build: sudo docker build -t kurento_test:1.0 .
 #to run: sudo docker run --network host kurento_test:1.0
+
