@@ -27,39 +27,21 @@
 <body>
 
 	<div class="container">
-		<div class="page-header">
-			<div class="header">
+	<div class="page-header">
+	<div class="header" align="center">
 				<body style="background-color:#10255A">
 						<a href="http://www.liberta.com.tr"><img src="img/liberta.png"
-							alt="Liberta" height="50px" /></a>
-  				<h1 style='color:white;'>LIBERTA Video Presentation Application</h1>
-			</div>
-			<ol>
-				<li style='color:white;'><span style='color:white;'>Open this page with a browser compliant with WebRTC
-					(Chrome, Firefox).
-				</li>
-				<li style='color:white;'><span style='color:white;'>If you would like to be the <i>Presenter</i> of the
-					communication, click on <i>Presenter</i> button. There can only be
-					one of this kind of peer, and so, if the <i>Presenter</i> peer is
-					already present, the application returns an error (see the the
-					console).
-				</li>
-				<li style='color:white;'><span style='color:white;'>Grant the access to the camera and microphone. After the
-					SDP negotiation the communication should start.</li>
-				<li style='color:white;'><span style='color:white;'>In a different machine (or a different tab in the same
-					browser) click on <i>Viewer</i> button to see the <i>Presenter</i>
-					stream.
-				</li>
-				<li style='color:white;'><span style='color:white;'>Click on <i>Stop</i> to finish the communication. When <i>Presenter</i>
-					clicks on <i>Stop</i>, the rest of <i>Viewers</i> (if any) ends the
-					communication too.
-				</li>
-			</ol>
-		</div>
+							alt="Liberta" height="35px" /></a>
+  				<h3 
+  				style='color:white;'>LIBERTA Video Presentation Application
+  				 <div>
+  				</h3>
+	</div>
+	</div>
 		<div class="row">
-			<div class="col-md-5">
+			<div class="col-md-12">
 				<div class="row">
-					<div class="col-md-12">
+					<div class="col-xs-6 col-sm-4" style="float:none;margin:auto;" align="center">
 						<a style='color:white;'id="presenter" href="#" class="btn btn-success"><span
 							class="glyphicon glyphicon-play"></span> Presenter </a> <a
 							style='color:white'id="viewer" href="#" class="btn btn-primary"><span
@@ -67,14 +49,9 @@
 							href="#" class="btn btn-danger"><span
 							style='color:white'class="glyphicon glyphicon-stop"></span> Stop</a>
 					</div>
-				</div>
-				<br /> <label class="control-label" for="console"style="color:white;">Console</label><br>
-				<br>
-				<div style="background-color:#10255A" id="console" class="democonsole">
-					<ul></ul>
-				</div>
+					<hr />
 			</div>
-			<div class="col-md-7">
+			<div class="col-md-7" style="float:none;margin:auto;">
 				<div id="videoBig">
 					<video id="video" autoplay width="640px" height="480px"
 						poster="img/webrtc.png"></video>

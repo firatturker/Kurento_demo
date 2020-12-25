@@ -19,8 +19,13 @@ var ws = new WebSocket('wss://' + location.host + '/call');
 var video;
 var webRtcPeer;
 
+
+
 window.onload = function() {
 	console = new Console();
+	console.log = function() {}
+	console.info = function() {}
+	console.error = function() {}
 	video = document.getElementById('video');
 	disableStopButton();
 }
